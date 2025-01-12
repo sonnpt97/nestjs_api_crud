@@ -1,0 +1,68 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type ProfileDto {
+  id: Int
+  gender: String
+  photo: String
+}
+
+type UserDTO {
+  id: Int!
+  firstName: String
+  lastName: String
+  isActive: Boolean
+  profile: ProfileDto
+}
+
+type CategoryDTO {
+  id: ID!
+  name: String!
+  products: [ProductDTO!]!
+}
+
+type ProductDTO {
+  id: ID!
+  name: String!
+  price: Float!
+  description: String
+  category: CategoryDTO!
+  categoryId: ID!
+}
+
+type Query {
+  users: [UserDTO!]!
+  user(id: Int!): UserDTO!
+  getProducts: [ProductDTO!]!
+  getProductById(id: Float!): ProductDTO!
+  getAllCategories: [CategoryDTO!]!
+  getCategoryById(id: Float!): CategoryDTO!
+}
+
+type Mutation {
+  createUser(user: UserParams!): UserDTO!
+  updateProduct(id: Float!, input: ProductParam!): ProductDTO!
+  createProduct(input: ProductParam!): ProductDTO!
+  deleteProduct(id: Float!): Boolean!
+  createCategory(createCategoryInput: CategoryParam!): CategoryDTO!
+  updateCategory(id: Float!, updateCategoryInput: CategoryParam!): CategoryDTO!
+  deleteCategory(id: Float!): Boolean!
+}
+
+input UserParams {
+  firstName: String!
+  lastName: String!
+  isActive: Boolean!
+}
+
+input ProductParam {
+  name: String
+  price: Float
+  description: String
+  categoryId: Int
+}
+
+input CategoryParam {
+  name: String
+}
