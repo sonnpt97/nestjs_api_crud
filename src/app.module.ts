@@ -33,8 +33,8 @@ import { EjsAdapter } from '@nestjs-modules/mailer/dist/adapters/ejs.adapter';
         port: 587,               // Cổng SMTP
         secure: false,           // false nếu không sử dụng TLS, true nếu có
         auth: {
-          user: 'icover1997@gmail.com', // Tài khoản email
-          pass: 'xqbhgbaotexizdzq',   // Mật khẩu email
+          user: '', // Tài khoản email
+          pass: '',   // Mật khẩu email
         },
       },
       defaults: {
